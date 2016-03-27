@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <script src="node_modules/systemjs/dist/system-csp-production.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>test</h1>
+    <script type="text/javascript">
+      System.config({
+        baseURL: '/dist/',
+        defaultJSExtensions: true
+      });
+
+      System.import('moduleA/bundle').then(function(mA) {
+        console.log('moduleA : ', mA.default);
+      });
+      System.import('moduleB/bundle').then(function(mB) {
+        console.log('moduleB : ', mB.default);
+      });
+    </script>
+  </body>
+</html>
